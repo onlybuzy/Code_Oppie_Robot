@@ -15,5 +15,5 @@ while True:
 
     value=adc.get_last_result()
     b_B=value*100/4095
-    print('Channel 0: {0.00}'.format(b_B))
+    print('Percentage: {0}'.format(b_B))
     time.sleep(0.5)
