@@ -15,5 +15,5 @@ while True:
 
     value=adc.get_last_result()
     p_B=((value-14190)/(4420))*100
-    print(round(p_B,1))
+    print(round(p_B,0))
     time.sleep(0.5)
