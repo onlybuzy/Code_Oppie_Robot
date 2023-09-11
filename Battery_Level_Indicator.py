@@ -14,6 +14,6 @@ print("ADC Reading Value: ")
 while True:
 
     value=adc.get_last_result()
-    b_B=(value-14190)/(4420)
-    print('Percentage: {0}'.format(b_B))
+    p_B=((value-14190)/(4420))*100
+    print(round(p_B,2))
     time.sleep(0.5)
