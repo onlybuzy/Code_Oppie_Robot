@@ -14,5 +14,6 @@ print("ADC Reading Value: ")
 while True:
 
     value=adc.get_last_result()
-    print('Channel 0: {0}'.format(value))
+    b_B=map(value,)*100/4095
+    print('Channel 0: {0.00}'.format(b_B))
     time.sleep(0.5)
