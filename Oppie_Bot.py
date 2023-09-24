@@ -5,7 +5,7 @@ import atexit
 pwm = PCA9685(0x40, debug=False)
 pwm.setPWMFreq(50)
 
-class robot_movement:
+class motors_move:
      def __init__(self):
         self.PWMA = 0
         self.AIN1 = 1

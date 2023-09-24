@@ -1,9 +1,9 @@
 from PCA9685 import PCA9685
 from time import sleep
 
-import Robot
+import Oppie_Bot
 
-r=Robot.robot_movement()
+r=Oppie_Bot.robot_movement()
 
 r.set_left(50)
 r.set_right(50)

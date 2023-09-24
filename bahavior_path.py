@@ -1,4 +1,4 @@
-import Robot
+import Oppie_Bot
 from time import sleep
 
 def straight(bot,seconds):
@@ -25,7 +25,7 @@ def spin_right(bot,seconds):
     bot.set_right(-60)
     sleep(seconds)
 
-bot = Robot.robot_movement()
+bot = Oppie_Bot.robot_movement()
 straight(bot, 1)
 turn_left(bot,3.3)
 spin_right(bot,0.63)
