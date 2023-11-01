@@ -20,12 +20,12 @@ r=Oppie_Bot.motors_move()
 
 enc_1=EncoderCounter(4)
 
-stop_at_time = time.time() + 1
+stop_at_time = time.time() + 3
 
 logging.basicConfig(level=logging.INFO)
 r.set_left(50)
 r.set_right(50)
 
 while time.time()<stop_at_time:
-    logger.info(f"ENC: {enc_1.pulse_count} ")
-    time.sleep(0.01)
+     logger.info(f"ENC: {enc_1.pulse_count} ")
+     time.sleep(0.01)
