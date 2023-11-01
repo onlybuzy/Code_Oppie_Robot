@@ -28,4 +28,4 @@ r.set_right(50)
 
 while time.time()<stop_at_time:
     logger.info(f"ENC: {enc_1.pulse_count} ")
-    time.sleep(0.05)
+    time.sleep(0.01)
