@@ -12,21 +12,27 @@ class EncoderCounter(object):
         self.pulse_count = 0
         self.device = DigitalInputDevice(pin=pin_number)
         self.device.pin.when_changed = self.when_changed
-    def when_changed(self, _, state):
+  
+    def when_changed(self,time_ticks, state):
         self.pulse_count += 1
     
+
+
 
 r=Oppie_Bot.motors_move()
 
 
 enc_1=EncoderCounter(4)
+
 enc_2=EncoderCounter(17)
+
 enc_3=EncoderCounter(27)
 
-stop_at_time = time.time() + 2
+stop_at_time = time.time() + 1
 
 
 logging.basicConfig(level=logging.INFO)
+
 r.set_left(50) 
 r.set_right(50)
 
