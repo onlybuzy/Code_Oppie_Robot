@@ -20,7 +20,7 @@ r=Oppie_Bot.motors_move()
 
 enc_1=EncoderCounter(4)
 
-stop_at_time = time.time() + 3
+stop_at_time = time.time() + 2
 
 logging.basicConfig(level=logging.INFO)
 r.set_left(50)
