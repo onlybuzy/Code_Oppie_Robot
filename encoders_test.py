@@ -5,18 +5,20 @@ import logging
 from gpiozero import DigitalInputDevice
 
 
-logger=logging.getLogger("test_encoders")
 
 class EncoderCounter(object):
-    def __init__(self, pin_number):
-        self.pulse_count = 0
-        self.device = DigitalInputDevice(pin=pin_number)
-        self.device.pin.when_changed = self.when_changed
-  
-    def when_changed(self,time_ticks, state):
-        self.pulse_count += 1
-    
-
+    def __init__(self, pin):
+        self._value = 0
+        encoder = DigitalInputDevice(pin)
+        encoder.when_activated = self._increment
+        encoder.when_deactivated = self._increment
+    def reset(self):
+        self._value = 0
+    def _increment(self):
+        self._value += 1
+    @property
+    def value(self):
+        return self._value
 
 
 r=Oppie_Bot.motors_move()
@@ -26,16 +28,13 @@ enc_1=EncoderCounter(4)
 
 enc_2=EncoderCounter(17)
 
-enc_3=EncoderCounter(27)
 
 stop_at_time = time.time() + 1
 
-
-logging.basicConfig(level=logging.INFO)
 
 r.set_left(50) 
 r.set_right(50)
 
 while time.time()<stop_at_time:
-     logger.info(f"enc_1: {enc_1.pulse_count} enc_2: {enc_2.pulse_count} enc_3: {enc_3.pulse_count}")
+     print("e1 {} e2 {}".format(enc_1.value, enc_2.value))
      time.sleep(0.05)
