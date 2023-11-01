@@ -16,7 +16,9 @@ class EncoderCounter(object):
         self._value = 0
     def _increment(self):
         self._value += 1
+   
     @property
+
     def value(self):
         return self._value
 
@@ -29,12 +31,12 @@ enc_1=EncoderCounter(4)
 enc_2=EncoderCounter(17)
 
 
-stop_at_time = time.time() + 1
+stop_at_time = time.time() + 2
 
 
 r.set_left(50) 
 r.set_right(50)
 
 while time.time()<stop_at_time:
-     print("e1 {} e2 {}".format(enc_1.value, enc_2.value))
+     print(enc_1.value)
      time.sleep(0.05)
