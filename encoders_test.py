@@ -18,7 +18,7 @@ class EncoderCounter(object):
 
 r=Oppie_Bot.motors_move()
 
-enc_1=EncoderCounter(27)
+enc_1=EncoderCounter(17)
 
 stop_at_time = time.time() + 1
 
