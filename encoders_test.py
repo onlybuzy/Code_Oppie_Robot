@@ -18,15 +18,18 @@ class EncoderCounter(object):
 
 r=Oppie_Bot.motors_move()
 
+
 enc_1=EncoderCounter(4)
 enc_2=EncoderCounter(17)
+enc_3=EncoderCounter(27)
 
 stop_at_time = time.time() + 2
+
 
 logging.basicConfig(level=logging.INFO)
 r.set_left(50) 
 r.set_right(50)
 
 while time.time()<stop_at_time:
-     logger.info(f"enc_1: {enc_1.pulse_count} enc_2: {enc_2.pulse_count}")
+     logger.info(f"enc_1: {enc_1.pulse_count} enc_2: {enc_2.pulse_count} enc_3: {enc_3.pulse_count}")
      time.sleep(0.01)
